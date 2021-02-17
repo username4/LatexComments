@@ -1,8 +1,37 @@
-/*This Plugin has the purpose of displaying comments written in latex as a compiled graphic*
- * Authors: Michelle Rausch*/
+/*
+ * This Plugin has the purpose of displaying comments written in latex as a compiled graphic*
+ * Authors: Michelle Rausch
+ * */
 
+/* 
+ * Syntax:
+ * inline: #$LATEXCODE$#
+ * Block:
+ * #begin{latex}
+ * LATEXCODE
+ * end{latex}#
+ * */
+ 
+ /*
+  * 1st step:
+  * recognize commented code (sciwrapper.h)
+  * 2nd:
+  * recgnize latex breaks
+  * 3rd:
+  * extract code with
+  * 4th:
+  * compile with [standalone] (call pdflatex from plugin)
+  * 5th:
+  * a: pic in ram
+  * b: pic n folder
+  * 6th:
+  * display over text (GTK)
+*/
 
 #include <geanyplugin.h>
+
+
+
 
 
 static void item_activate_cb(GtkMenuItem *menuitem, gpointer user_data)
